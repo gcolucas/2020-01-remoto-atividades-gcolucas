@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+
+    <script>
+        'use strict'
+
+        function Pessoa(nome, idade, endereco, email){
+            this.nome=nome;
+            this.idade=idade;
+            this.endereco=endereco;
+            this.email=email;
+        }
+
+        function carregarDados(){
+            const nome=window.prompt('Insira seu nome');
+            const idade=window.prompt('Informe sua idade');
+            const endereco=window.prompt('Informe seu endereço');
+            const email=window.prompt('Informe seu email');
+        
+            const pessoa=new Pessoa(nome,idade,endereco,email);
+
+            document.getElementById("nome").innerHTML=nome;
+            document.getElementById("idade").innerHTML=pessoa.idade;
+            document.getElementById("endereco").innerHTML=pessoa.endereco;
+            document.getElementById("email").innerHTML=pessoa.email;
+
+
+            console.log(pessoa);
+
+           
+        }
+    </script>
+
+</head>
+<body>
+
+    <script>
+        document.write('Informações');
+    </script>
+
+
+    <div id="dados">
+        <div id="nome"></div>
+        <div id="idade"></div>
+        <div id="endereco"></div>
+        <div id="email"></div>
+    </div>
+
+
+    <input type="button" value="carregar" onclick="carregarDados()">
+</body>
+</html>
