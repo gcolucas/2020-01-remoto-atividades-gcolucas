@@ -17,14 +17,14 @@
         }
 
         function carregarDados(){
-            const nome=window.prompt('Insira seu nome');
-            const idade=window.prompt('Informe sua idade');
-            const endereco=window.prompt('Informe seu endereço');
-            const email=window.prompt('Informe seu email');
+            const nome=window.prompt('Insira seu nome:');
+            const idade=window.prompt('Informe sua idade:');
+            const endereco=window.prompt('Informe seu endereço:');
+            const email=window.prompt('Informe seu email:');
         
             const pessoa=new Pessoa(nome,idade,endereco,email);
 
-            document.getElementById("nome").innerHTML=nome;
+            document.getElementById("nome").innerHTML=pessoa.nome;
             document.getElementById("idade").innerHTML=pessoa.idade;
             document.getElementById("endereco").innerHTML=pessoa.endereco;
             document.getElementById("email").innerHTML=pessoa.email;
@@ -52,6 +52,6 @@
     </div>
 
 
-    <input type="button" value="carregar" onclick="carregarDados()">
+    <input type="button" value="Carregar" onclick="carregarDados()">
 </body>
 </html>

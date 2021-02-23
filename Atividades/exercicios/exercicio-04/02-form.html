@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script>
+        'use strict'
+        function carregarDados(nome, idade, endereco){
+            this.nome=nome;
+            this.idade=idade;
+            this.endereco=endereco;
+        }
+
+        function apresentaDados(){
+            const nome=document.frmDados.nome.value;
+            const idade=document.frmDados.idade.value;
+            const endereco=document.frmDados.endereco.value;
+            const dadosPessoa=new carregarDados(nome,idade,endereco);
+            window.alert(`Dados carregados: ${nome}, ${idade}, ${endereco}.`)
+            console.log(dadosPessoa)
+        }
+    </script>
+
+
+</head>
+<body>
+    <form action="post" name="frmDados">
+        
+        <div class="form-group">
+            <label for="nome">Nome: </label>
+            <input type="text"name="nome" id ="nome" placeholder="Nome">
+        </div>
+
+        <div class="form-group">
+            <label for="idade">Idade: </label>
+            <input type="text"name="idade"id ="idade" placeholder="Idade">
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereço: </label>
+            <input type="text" name="endereco" id=endereco placeholder="Endereço">
+        </div>
+
+
+        <input type="button" value="Apresentar dados" class="btn btn-info" onclick="apresentaDados()">
+    </form>
+</body>
+</html>

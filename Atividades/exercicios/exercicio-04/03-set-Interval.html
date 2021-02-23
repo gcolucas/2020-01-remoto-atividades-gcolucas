@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+
+    <script>
+        'use strict'
+       
+        function data(){
+            
+            var d=new Date,displayDate;
+            
+            if(navigator.userAgent.toLowerCase().indexOf('firefox')>-1){
+                displayDate=d.toLocaleTimeString('pt-BR');
+            }
+            else{
+                displayDate=d.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'});
+
+            }
+            document.getElementById("dados").innerHTML=displayDate;
+            
+        }
+
+        function mensagem(){
+            window.alert('Seja bem-vindo!');
+        }
+
+        function noticia(){
+            window.alert('Ainda estamos em construção. Novidades em breve!!')
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <div id="dados">
+        <div id="data"></div>
+        <div id="mensagem"></div>
+        <div id="noticia"></div>
+        
+    </div>
+
+    <input type="button" value="Data" onclick="data()">
+    <input type="button" value="Mensagem" onclick="mensagem()">
+    <input type="button" value="Noticia" onclick="noticia()">
+</body>
+</html>
