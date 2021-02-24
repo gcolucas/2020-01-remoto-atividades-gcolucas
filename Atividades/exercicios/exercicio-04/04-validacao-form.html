@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Cadastro de pessoas</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script>
+        function validar(campo,alerta,label){
+            let n = campo.value;
+            if(n.length ==0){
+                document.getElementById(alerta).style.display="block";
+                campo.classList.add("is-invalid");
+                document.getElementById(label).classList.add("text-danger");
+                campo.value="";
+                campo.focus();
+                return false;
+
+            }
+            document.getElementById(alerta).style.display="none";
+            campo.classList.remove("is-valid");
+            campo.classList.add("is-valid");
+
+            document.getElementById(label).classList.remove("text-danger");
+            document.getElementById(label).classList.add("text-success");
+            
+            return true;
+        }
+
+
+        function confere(){
+            var t1 = document.dados.nome;
+            var t2 = document.dados.endereco;
+            var t3 = document.dados.cpf;
+            var t4 = document.dados.rg;
+            var t5 = document.dados.telefone;
+            var t6 = document.dados.email;
+
+            if(validar(t1,"alerta1","nome") && validar(t2,"alerta2","endereco") && validar(t3,"alerta3","cpf") && validar(t4,"alerta4","rg")&& validar(t5,"alerta5","telefone")&&validar(t6,"alerta6","email")){
+                window.alert(`Dados carregados com sucesso`);
+            }
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+    <div class="jumbotron">
+        <h1>Dados de cadastro</h1>
+    </div>
+    
+    <div class="container">
+        <form name="dados">
+            
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control">
+            </div>
+
+            <div id="alerta1" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" id="endereco" placeholder="Endereco" class="form-control">
+            </div>
+
+            <div id="alerta2" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF" class="form-control">
+            </div>
+
+
+            <div id="alerta3" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+            <div class="form-group">    
+                <label for="rg">RG:</label>
+                <input type="text" name="rg" id="rg" placeholder="RG" class="form-control">
+            </div>
+            
+            <div id="alerta4" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="contato">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" placeholder="Telefone" class="form-control">
+            </div>
+
+            <div id="alerta5" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email"id="email" placeholder="Email" class="form-control">
+            </div>
+
+            <div id="alerta6" class="alert alert-danger" style="display: none">
+                <span>Preencha o campo corretamente!</span>
+            </div>
+
+            <input type="button" value="Cadastrar" class="btn btn-primary" onclick="confere()">
+
+            <input type="reset" value="Limpar" class="btn btn-warning">
+
+            <input type="button" value="Voltar" onclick="history.go(-1)" class="btn btn-info">
+        </form>
+    </div>
+
+    
+
+</body>
+</html>
